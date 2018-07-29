@@ -35,6 +35,7 @@ defmodule Psf.Mixfile do
       {:phoenix, github: "phoenixframework/phoenix", override: true},
       {:phoenix_pubsub, "~> 1.0"},
       {:goth, "~> 0.9"},
+      {:grpc, github: "clearjs/grpc-elixir"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 2.4", override: true}
     ]
