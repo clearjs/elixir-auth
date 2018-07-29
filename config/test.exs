@@ -8,3 +8,6 @@ config :psf, PsfWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :goth,
+  json: "./config/gcloud-config-test.secret.json" |> File.read!

@@ -34,6 +34,7 @@ defmodule Psf.Mixfile do
     [
       {:phoenix, "~> 1.3.1"},
       {:phoenix_pubsub, "~> 1.0"},
+      {:goth, "~> 0.9"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"}
     ]
