@@ -6,4 +6,11 @@ defmodule Psf do
   Contexts are also responsible for managing your data, regardless
   if it comes from the database, an external API or others.
   """
+
+  @gcloud_scope "https://www.googleapis.com/auth/pubsub"
+
+  def authenticate() do
+    {:ok, token} = Goth.Token.for_scope(@gcloud_scope)
+    token
+  end
 end
