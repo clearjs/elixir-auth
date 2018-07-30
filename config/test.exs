@@ -10,5 +10,5 @@ config :psf, PsfWeb.Endpoint,
 config :logger, level: :warn
 
 config :goth,
-  json: "./priv/cert/gcloud-config-test.secret.json" |> File.read!
+  json: (System.get_env("GOOGLE_APPLICATION_CREDENTIALS") || "./priv/cert/gcloud-config-test.secret.json") |> File.read!
 
