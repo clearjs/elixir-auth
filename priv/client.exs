@@ -1,5 +1,15 @@
 auth = Psf.authenticate() |> IO.inspect
-opts = [cred: GRPC.Credential.new(ssl: [])]
+ca_path = Path.expand("./cert/roots.pem", :code.priv_dir(:psf))
+cert_path = Path.expand("./cert/client-cert.pem", :code.priv_dir(:psf))
+key_path = Path.expand("./cert/client-key.pem", :code.priv_dir(:psf))
+cred = GRPC.Credential.new(ssl: [
+  certfile: cert_path,
+  keyfile: key_path,
+  cacertfile: ca_path,
+  #server_name_indication: "pubsub.googleapis.com",
+  verify: :verify_peer
+])
+opts = [cred: cred]
 url = System.get_env("PUBSUB_ENDPOINT") || "pubsub.googleapis.com:443"
 {:ok, channel} = GRPC.Stub.connect(url, opts) |> IO.inspect
 {:ok, project_id} = Goth.Config.get(:project_id)

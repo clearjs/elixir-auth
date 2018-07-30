@@ -37,4 +37,4 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 config :goth,
-  json: "./config/gcloud-config-test.secret.json" |> File.read!
+  json: "./priv/cert/gcloud-config-test.secret.json" |> File.read!

@@ -10,4 +10,5 @@ config :psf, PsfWeb.Endpoint,
 config :logger, level: :warn
 
 config :goth,
-  json: "./config/gcloud-config-test.secret.json" |> File.read!
+  json: "./priv/cert/gcloud-config-test.secret.json" |> File.read!
+

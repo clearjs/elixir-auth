@@ -14,5 +14,11 @@ erl_crash.dump
 # secrets files as long as you replace their contents by environment
 # variables.
 /config/*.secret.*
+# Project-specific auth file from Google PubSub console
+# https://console.developers.google.com/apis/credentials
+priv/cert/*\.secret\.json
+# this one is extracted from the file above, "private_key" field (remember to replace /n with actual newlines)
+priv/cert/client-key\.pem
 
+# macOS-specific
 .DS_Store
